@@ -1,0 +1,4 @@
+interface:
+  display_name: "Storytelling"
+  short_description: "Develop, diagnose, and revise stories across media"
+  default_prompt: "Use $storytelling to help me solve my story problem and produce the requested draft or revision."
