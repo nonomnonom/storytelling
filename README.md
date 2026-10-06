@@ -19,31 +19,39 @@ The references bring together structural models, drafting methods, and approache
 
 ## Installation
 
-For Codex, clone the complete repository into your personal skills directory:
+Install with the [Skills CLI](https://github.com/vercel-labs/skills) using Node.js and npm:
 
 ```bash
-git clone https://github.com/nonomnonom/storytelling.git ~/.codex/skills/storytelling
+npx skills add nonomnonom/storytelling
 ```
 
-Windows PowerShell:
+The CLI supports Claude Code, Codex, Cursor, OpenCode, and other agents listed in its documentation. Use `--agent` to select target agents and `--global` for a personal installation across projects.
 
-```powershell
-git clone https://github.com/nonomnonom/storytelling.git "$env:USERPROFILE\.codex\skills\storytelling"
+For manual installation, clone or download the repository:
+
+```bash
+git clone https://github.com/nonomnonom/storytelling.git
 ```
 
-Use your configured skills directory if it differs. Keep `SKILL.md`, `agents/`, and `references/` together. Other agents can load the package through their supported skill mechanism.
+Place the complete `storytelling` folder in the skills directory documented by your agent. Keep `SKILL.md` and `references/` together so the supporting guides remain accessible.
+
+## Compatibility
+
+The package uses the open [Agent Skills format](https://agentskills.io/specification). Its core instructions are Markdown with YAML metadata and have no model-provider dependency. `agents/openai.yaml` supplies optional interface metadata for hosts that use it.
+
+Discovery, installation paths, and invocation syntax depend on the host. For an agent without native skill support, provide `SKILL.md` as instructions and make the referenced files accessible through its context or file tools.
 
 ## Usage
 
-Invoke `$storytelling` with a draft, an idea, or a specific narrative problem. Include the medium and any choices the revision should preserve.
+Ask your agent to use the storytelling skill with a draft, an idea, or a specific narrative problem. Include the medium and any choices the revision should preserve. If your host offers a skill picker or explicit invocation command, use its supported mechanism.
 
 ```text
-Use $storytelling to diagnose and revise this scene.
+Use the storytelling skill to diagnose and revise this scene.
 Preserve the limited viewpoint, the ending, and the narrator's informal voice.
 ```
 
 ```text
-Use $storytelling to adapt this story into six silent comic panels.
+Use the storytelling skill to adapt this story into six silent comic panels.
 Keep the central relationship and make the turning point readable through action.
 ```
 
